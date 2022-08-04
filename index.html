@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="static/images/favicon.svg">
+  <title>aginn</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@100;400;900&display=swap" rel="stylesheet" />
+
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+
+  <style>
+    h1 {
+
+      font-size: 3rem;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 2rem;
+    }
+
+    p {
+      margin-top: 0;
+      font-size: 1.25rem;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Prompt', sans-serif;
+      color: white;
+      background: #F2F2F2;
+      overflow-x: hidden;
+    }
+
+    section {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /* min-height: 400px; */
+
+    }
+
+    /* Color Pallet */
+    .pallet_1 {
+      background: #181D26;
+    }
+
+    .pallet_2 {
+      background: #344859;
+    }
+
+    .pallet_3 {
+      background: #B8BFBE;
+    }
+
+    .pallet_4 {
+      background: #59524C;
+    }
+
+    .pallet_5 {
+      background: #F2F2F2;
+    }
+
+    .dark {
+      background: #0f0f10;
+    }
+
+    .heading {
+      max-width: 600px;
+      padding: 25px;
+      padding-bottom: 0px;
+    }
+
+    .heading2 {
+      color: #0f0f10;
+      max-width: 600px;
+      padding: 25px;
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+
+    /* SVG background image via https://haikei.app/ */
+
+    .spacer {
+      /* aspect-ratio: 960/300; */
+      width: 100%;
+      height: 300px;
+      background-repeat: no-repeat;
+      /* background-position: center; */
+      background-size: cover;
+      z-index: 1;
+    }
+
+    .layer1 {
+      background-image: url('static/images/layer1.svg');
+    }
+
+    .layer2 {
+      background-image: url('static/images/layer2.svg');
+    }
+
+    .flip {
+      transform: rotate(180deg);
+    }
+
+    /* Blobs SVG background image via https://haikei.app/ */
+
+    .blob-motion {
+      position: absolute;
+      transform: translateY(-20%);
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .blob-content {
+      z-index: 1;
+    }
+
+    .blobs {
+      width: 100%;
+      background: url('./blobs.svg') no-repeat bottom / cover;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      width: 100%;
+    }
+
+    .column {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      flex-basis: 100%;
+      flex: 1;
+      
+    }
+
+    .button {
+    background: #344859;
+    display: inline-block;
+    text-decoration: none;
+    letter-spacing: 0;
+    color: #fff;
+    padding: 12px 20px;
+    margin-bottom: 18px;
+    border: none;
+    cursor: pointer;
+    height: auto;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+    border-radius: 3px;
+}
+  .button:hover {
+    background: #B8BFBE;
+    color: #0f0f10;
+  }
+  
+  .double {
+  margin-top: auto;
+  }
+
+  /* .profiles {
+    text-align: center;
+  } */
+
+  .profiles a {
+    
+    color: #fff;
+    margin-right: 20px;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+  }
+
+  .profiles a:hover {
+    color: #B8BFBE;
+  }
+
+  .email {
+    vertical-align: middle;
+    margin-right: 5px;
+    text-decoration: none;
+    color: #0f0f10;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -khtml-border-radius: 3px;
+  }
+
+  .email:hover {
+    color: #344859
+  }
+
+
+
+
+    
+  </style>
+</head>
+
+<body>
+  <section class="pallet_1">
+    <div class="blob-content">
+      <div class="heading">
+        <h1>Hello!</h1>
+        <p>My name is Austin Ginn. I'm an Atlanta area based full stack developer, audio/visual engineer and musician
+          specializing in improving workflows through custom web applications. Start scrolling and learn more about me.
+        </p>
+        <p class="profiles">
+          <a href="https://github.com/austinginn"><i data-feather="github"></i></a>
+          <a href="https://www.linkedin.com/in/austinleeginn/"><i data-feather="linkedin"></i></a>
+          <a href="https://instagram.com/austinleeginn"><i data-feather="instagram"></i></a>
+          <a href="https://www.youtube.com/channel/UC_5RL3p2fARUbezHXY0B28A"><i data-feather="youtube"></i></a>
+        </p>
+      </div>
+    </div>
+
+    <svg class="blob-motion" id="visual" viewBox="0 0 960 540" width="100%" height="540"
+      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+      <g transform="translate(450.7256843113689 283.4942824330989)">
+        <path id="blob1"
+          d="M148.7 -134.9C193.7 -103.7 231.9 -51.9 232.4 0.6C233 53 196.1 106.1 151.1 128.6C106.1 151.1 53 143 -4.4 147.4C-61.8 151.8 -123.5 168.5 -151.2 146C-178.8 123.5 -172.4 61.8 -172.8 -0.4C-173.1 -62.5 -180.3 -124.9 -152.6 -156.1C-124.9 -187.3 -62.5 -187.1 -5.3 -181.8C51.9 -176.5 103.7 -166 148.7 -134.9"
+          fill="#344859"></path>
+      </g>
+      <g transform="translate(509.54377535978017 281.49390864595887)" style="visibility: hidden">
+        <path id="blob2"
+          d="M115.4 -137.9C137.9 -92.9 136.4 -46.4 133.6 -2.8C130.8 40.8 126.6 81.6 104.1 118.4C81.6 155.2 40.8 188.1 -8.4 196.5C-57.5 204.8 -115 188.7 -151 151.9C-187 115 -201.5 57.5 -190.8 10.7C-180.1 -36.1 -144.1 -72.1 -108.1 -117.1C-72.1 -162.1 -36.1 -216.1 5.2 -221.2C46.4 -226.4 92.9 -182.9 115.4 -137.9"
+          fill="#BB004B"></path>
+      </g>
+    </svg>
+
+    <script>
+      const tween = KUTE.fromTo(
+        '#blob1',
+        { path: '#blob1' },
+        { path: '#blob2' },
+        { repeat: 999, duration: 12000, yoyo: true }
+      ).start();
+    </script>
+  </section>
+
+  <div class="spacer layer1"></div>
+  <section>
+    <div class="heading2">
+      <h1>About Me</h1>
+      <p>After graduating from Middle Tennessee State University with a Bachelor of Science in Audio Production (Computer Science Minor), I started working at Alpharetta Methodist as Lead A/V Engineer. Three years later, I became Director of Technology, overseeing all of IT and A/V on campus. I currently lead a talented team that executes weekly live productions for an online and in-person congregation.</p>
+      <p>My IT and software development foundation began in college, C++ being my language of study. Since then, I have found a passion for web development. I am currently working on and maintaining several projects - my main focus lately has revolved around Blackmagic Design ATEM Switchers. Check out my <a href="https://www.github.com/austinginn">GitHub</a> for my public projects. If you have an idea or workflow you need improved in this area, I would be happy to work with you to see the project through.
+      </p>
+
+      <div id="contact-details" class="row">
+        <div class="column">
+          <h2>Contact Details</h2>
+          <p>
+            <span>Austin Ginn</span>
+            <br>
+            <span><a class="email" href="mailto: austinleeginn@gmail.com"><i data-feather="mail"></i></a>austinleeginn@gmail.com</span>
+          </p>
+        </div>
+      
+        <!-- <div class="column double">
+          <p>
+            <a href="#" class="button"><i data-feather="download"></i>
+              Download Resume</a>
+            </p>
+        </div> -->
+      </div>
+
+      
+    </div>
+
+
+  </section>
+</body>
+
+<script>
+  feather.replace();
+</script>
+
+</html>
